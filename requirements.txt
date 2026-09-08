@@ -1,0 +1,5 @@
+icalendar>=6.1,<7
+python-dotenv>=1.0,<2
+requests>=2.32,<3
+rapidfuzz>=3.0,<4
+

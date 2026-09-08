@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basketkalender</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header><h1>Basketkalender</h1><p id="updated">Laddar kalender …</p></header>
+    <section id="stats" aria-label="Sammanfattning"></section>
+    <label class="filter">Serie <select id="series-filter"><option value="">Alla serier</option></select></label>
+    <p id="error" role="alert" hidden></p>
+    <div class="table-wrap"><table><thead><tr><th>Datum</th><th>Tid</th><th>Serie</th><th>Plats</th><th>Hemmalag</th><th>Bortalag</th><th>SportAdmin</th><th>Avvikelse</th></tr></thead><tbody id="matches"></tbody></table></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
