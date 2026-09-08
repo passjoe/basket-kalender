@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-dev.txt
       - name: Test
-        run: PYTHONPATH=src pytest -q
+        run: PYTHONPATH=src:. python -m pytest -q
       - name: Generate site
         env:
           SPORTADMIN_CALENDAR_URL: ${{ secrets.SPORTADMIN_CALENDAR_URL }}
