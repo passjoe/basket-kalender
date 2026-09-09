@@ -34,7 +34,12 @@ def display_venue(value: str | None) -> str | None:
     parts = [part.strip() for part in value.split(",") if part.strip()]
     if len(parts) >= 2 and len({normalize_text(part) for part in parts}) == 1:
         return parts[0]
-    return value.strip()
+    # Remove consecutive duplicates
+    unique_parts = []
+    for part in parts:
+        if not unique_parts or normalize_text(part) != normalize_text(unique_parts[-1]):
+            unique_parts.append(part)
+    return ", ".join(unique_parts) if unique_parts else value.strip()
 
 
 def normalize_team(value: str | None) -> str:
