@@ -13,6 +13,7 @@ def test_generates_one_row_per_profixio_match(tmp_path):
         [event("sportadmin", "Match: Uppsala Vit - Tumba Basket Röd")],
         web_dir=Path("web"),
         output_dir=output,
+        now=datetime(2026, 9, 11, tzinfo=ZoneInfo("Europe/Stockholm")),
     )
     assert len(payload["events"]) == 1
     assert (output / "data/matches.json").is_file()
